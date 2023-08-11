@@ -553,6 +553,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 4077399974615995569}
+  damage: 10
+  maxDelayDamge: 1
+  delayDamge: 0
   mHealth: 0
 --- !u!114 &2254970215776107619
 MonoBehaviour:
@@ -566,4 +569,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceecfc25a0cc566489f61b9a90612a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1

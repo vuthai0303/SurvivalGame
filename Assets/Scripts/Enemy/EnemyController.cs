@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
     public float maxHealth = 100f;
     public HealthBar healthBar;
+    public float damage = 10f;
+    public float maxDelayDamge = 1f;
+    public float delayDamge = 1f;
 
     [SerializeField]
     float mHealth;
@@ -33,4 +34,35 @@ public class EnemyController : MonoBehaviour
     {
         mHealth -= damage;
     }
+
+    private void OnDestroy()
+    {
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if(delayDamge >= maxDelayDamge)
+            {
+                delayDamge = 0f;
+                collision.gameObject.GetComponent<PlayerController>().isDamage(damage);
+            }
+            else
+            {
+                delayDamge += Time.deltaTime;
+            }
+            
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            delayDamge = maxDelayDamge;
+        }
+    }
+
 }

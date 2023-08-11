@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public LevelBar levelBar;
     public GameObject configGame;
     public GameObject sliceSkillPrefab;
+    public GameObject spinSkillPrefab;
 
     float mHealth;
     private int mLevel = 1;
@@ -31,6 +32,9 @@ public class PlayerController : MonoBehaviour
         //create skill player
         mPlayer.AddComponent<SliceSkill>();
         mPlayer.GetComponent<SliceSkill>().setSliceSkill(1, 10, 3, 1, sliceSkillPrefab, mPlayer, new UnityEngine.Vector3(0f, 0f, 0f));
+
+        mPlayer.AddComponent<SpinSkill>();
+        mPlayer.GetComponent<SpinSkill>().setSpinSkill(2, 10, 2f, 1f, spinSkillPrefab, mPlayer, 10f, 200f);
     }
 
     // Update is called once per frame
@@ -49,5 +53,10 @@ public class PlayerController : MonoBehaviour
             maxExp = configGame.GetComponent<Config>().getExp(mLevel);
         }
         levelBar.setExp(currentExp, maxExp);
+    }
+
+    public void isDamage(float damage)
+    {
+        mHealth -= damage;
     }
 }
