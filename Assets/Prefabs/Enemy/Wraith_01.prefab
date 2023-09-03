@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &758141494976569630
 RectTransform:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 4895007515360656117}
   - component: {fileID: 6953935811183921543}
   - component: {fileID: 840541213963804429}
-  - component: {fileID: 6447803320840339954}
+  - component: {fileID: 2907060821958706797}
   - component: {fileID: -4096029568366155997}
   - component: {fileID: 2254970215776107619}
   m_Layer: 0
@@ -448,7 +448,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &6953935811183921543
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -462,6 +462,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -475,6 +476,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9018935299384628643}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -498,7 +500,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0.062514305, y: -0.041676044}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,10 +512,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1.0831213, y: 1.9374137}
   m_EdgeRadius: 0
---- !u!50 &6447803320840339954
+--- !u!50 &2907060821958706797
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -551,6 +553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24017c6835ddb447b6af147b88d33f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mDamagePopup: {fileID: 7178563227965628289, guid: f9493ed0e9614d9488819112d95bd20f, type: 3}
+  mExpPrefab: {fileID: 4091739738568225257, guid: 0c50219e49f0b784a98026244385502c, type: 3}
   maxHealth: 100
   healthBar: {fileID: 4077399974615995569}
   damage: 10

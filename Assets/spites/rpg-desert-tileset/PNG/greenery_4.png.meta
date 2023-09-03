@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      greenery_4_0: 4629273250036013510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

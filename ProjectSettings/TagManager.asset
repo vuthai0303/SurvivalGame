@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - CanvasUI
+  - Exp
+  - Config
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Item
   - Water
   - UI
   - Background

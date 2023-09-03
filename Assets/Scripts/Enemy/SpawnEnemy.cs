@@ -1,14 +1,14 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
     public float maxDelaySpawn = 1f;
-    float delaySpawn = 1f;
+    float delaySpawn = 0f;
     float rangeSpawn = 5f;
 
     GameObject mPlayer;
+    GameResource mGameResource;
 
     const float MAX_HORIZONTAL = 50f;
     const float MAX_VERTICAL = 24f;
@@ -17,6 +17,7 @@ public class SpawnEnemy : MonoBehaviour
     void Start()
     {
         mPlayer = GameObject.FindGameObjectWithTag("Player");
+        mGameResource = GameObject.FindGameObjectWithTag("Config").GetComponent<GameResource>();
     }
 
     // Update is called once per frame
@@ -43,7 +44,10 @@ public class SpawnEnemy : MonoBehaviour
             {
                 enemyPosition.y = enemyPosition.y * -1;
             }
-            var enemy = Instantiate(EnemyPrefab, enemyPosition, Quaternion.identity);
+
+            int ids = (int)Unity.Mathematics.math.floor(Random.Range(0, 10)) < 5 ? (int)EnemyIDs.Wraith : (int)EnemyIDs.Slime_blue;
+            var enemyPrefab = mGameResource.getEnemyPrefab(ids);
+            var enemy = Instantiate(enemyPrefab, enemyPosition, Quaternion.identity) ;
         }
         else
         {

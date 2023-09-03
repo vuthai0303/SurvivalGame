@@ -7,8 +7,8 @@ public class LevelBar : MonoBehaviour
     public Slider slide;
     public TextMeshProUGUI textExp;
 
-    private float currentExp = 0;
-    private float maxCurrentExp = 100;
+    private int currentExp = 0;
+    private int maxCurrentExp = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class LevelBar : MonoBehaviour
         slide.value = currentExp;
     }
 
-    public void setExp(float exp, float maxExp)
+    public void setExp(int exp, int maxExp)
     {
         maxCurrentExp = maxExp;
         currentExp = exp;

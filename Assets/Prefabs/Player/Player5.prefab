@@ -168,7 +168,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1967934646444892851
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -182,6 +182,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 1
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -222,6 +223,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103587647677409632}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -245,8 +247,9 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.01706247, y: -0.0139602125}
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -256,8 +259,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.1421024, y: 0.3320796}
+  m_Size: {x: 0.25, y: 0.35}
   m_EdgeRadius: 0
 --- !u!114 &9188685958942434161
 MonoBehaviour:
@@ -321,8 +323,13 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 78513832825037455}
   levelBar: {fileID: 0}
+  levelText: {fileID: 0}
   configGame: {fileID: 0}
   sliceSkillPrefab: {fileID: 445489320859173018, guid: f00f7cd5b73a55c4e9b31618724c1abe, type: 3}
+  spinSkillPrefab: {fileID: 4037776383971952992, guid: 21f5cb717b69b9f46a08e522f7d91561, type: 3}
+  absorbLayerTarget:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4223312721703537274
 GameObject:
   m_ObjectHideFlags: 0

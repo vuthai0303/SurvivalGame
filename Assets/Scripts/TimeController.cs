@@ -6,7 +6,8 @@ public class TimeController : MonoBehaviour
 {
     public TextMeshProUGUI textTime;
 
-    private int time = 30 * 60;
+    private int minus = 0;
+    private int second = 0;
     private float rangeTime = 1f;
 
     // Update is called once per frame
@@ -16,17 +17,20 @@ public class TimeController : MonoBehaviour
         if(rangeTime <= 0)
         {
             rangeTime = 1f;
-            time -= 1;
+            second += 1;
+            if(second >= 60)
+            {
+                minus += 1;
+                second = 0;
+            }
         }
         textTime.text = getTimeStr();
     }
 
     string getTimeStr()
     {
-        int hours = (int)math.floor(time / 60);
-        int minus = time % 60;
-        string strHours = hours.ToString().Length > 1 ? hours.ToString() : "0" + hours.ToString();
         string strMinus = minus.ToString().Length > 1 ? minus.ToString() : "0" + minus.ToString();
-        return strHours + " : " + strMinus;
+        string strSecond = second.ToString().Length > 1 ? second.ToString() : "0" + second.ToString();
+        return strMinus + " : " + strSecond;
     }
 }

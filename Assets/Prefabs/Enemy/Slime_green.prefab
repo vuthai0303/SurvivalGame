@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8123123762899667219}
   - component: {fileID: 3365184645485641855}
   - component: {fileID: 3226822345969393289}
+  - component: {fileID: 2779735989018988069}
   m_Layer: 0
   m_Name: Slime_green
   m_TagString: Untagged
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &3226822345969393289
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,8 +102,27 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2779735989018988069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167160129064835379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24017c6835ddb447b6af147b88d33f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mDamagePopup: {fileID: 7178563227965628289, guid: f9493ed0e9614d9488819112d95bd20f, type: 3}
+  maxHealth: 300
+  healthBar: {fileID: 4077399974615995569, guid: 3822376ff3c5c054c847f81eb66309e4, type: 3}
+  damage: 10
+  maxDelayDamge: 1
+  delayDamge: 0

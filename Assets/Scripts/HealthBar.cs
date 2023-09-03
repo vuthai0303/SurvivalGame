@@ -31,6 +31,7 @@ public class HealthBar : MonoBehaviour
         gameObject.SetActive(health < maxHealth);
         m_maxHealth = maxHealth;
         m_health = health;
+        slide.maxValue = m_maxHealth;
     }
 
     public float getHealth()
