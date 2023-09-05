@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,35 +8,31 @@ public class LevelBar : MonoBehaviour
     public Slider slide;
     public TextMeshProUGUI textExp;
 
-    private int currentExp = 0;
-    private int maxCurrentExp = 100;
+    private GameObject mPlayer;
+    private GameObject mGameConfig;
 
     // Start is called before the first frame update
     void Start()
     {
-    }
-
-    void FixedUpdate()
-    {
-        slide.value = currentExp;
+        mPlayer = GameObject.FindGameObjectWithTag("Player");
+        mGameConfig = GameObject.FindGameObjectWithTag("Config");
     }
 
     // Update is called once per frame
     void Update()
     {
-        textExp.text = currentExp.ToString() + " / " + maxCurrentExp.ToString();
-        slide.value = currentExp;
+        updateExp();
+        textExp.text = slide.value.ToString() + " / " + slide.maxValue.ToString();
     }
 
-    public void setExp(int exp, int maxExp)
+    public void updateExp()
     {
-        maxCurrentExp = maxExp;
-        currentExp = exp;
-        slide.maxValue = maxExp;
+        slide.value = mPlayer.GetComponent<PlayerController>().getCurrentExp();
+        slide.maxValue = mGameConfig.GetComponent<Config>().getExp(mPlayer.GetComponent<PlayerController>().getLevel());
     }
 
     public float getExp()
     {
-        return currentExp;
+        return slide.value;
     }
 }

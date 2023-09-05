@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1308754810715238434}
   - component: {fileID: 2584999260492137979}
   m_Layer: 0
-  m_Name: Player5
+  m_Name: Player3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.23, y: 0.36}
+    oldSize: {x: 0.1796875, y: 0.28125}
     newSize: {x: 0.23, y: 0.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -322,14 +322,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 78513832825037455}
-  levelBar: {fileID: 0}
-  levelText: {fileID: 0}
-  configGame: {fileID: 0}
-  sliceSkillPrefab: {fileID: 445489320859173018, guid: f00f7cd5b73a55c4e9b31618724c1abe, type: 3}
-  spinSkillPrefab: {fileID: 4037776383971952992, guid: 21f5cb717b69b9f46a08e522f7d91561, type: 3}
   absorbLayerTarget:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &4223312721703537274
 GameObject:
   m_ObjectHideFlags: 0

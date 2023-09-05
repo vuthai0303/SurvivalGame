@@ -5,14 +5,12 @@ public class PlayerController : MonoBehaviour
 {
     public float maxHealth = 100f;
     public HealthBar healthBar;
-    public LevelBar levelBar;
-    public TextMeshProUGUI levelText;
 
     float mHealth;
-    private int mLevel = 1;
-    private int currentExp;
-    private int maxExp;
-    private float rangeAbsorbExp;
+    int mLevel = 1;
+    int currentExp;
+    int maxExp;
+    float rangeAbsorbExp;
     public LayerMask absorbLayerTarget;
 
     private GameObject mPlayer;
@@ -30,7 +28,6 @@ public class PlayerController : MonoBehaviour
         currentExp = 0;
         maxExp = mGameConfig.GetComponent<Config>().getExp(mLevel);
         rangeAbsorbExp = 1f;
-        levelBar.setExp(currentExp, maxExp);
         gameObject.GetComponentInChildren<Canvas>().enabled = true;
 
         //create skill player
@@ -56,8 +53,6 @@ public class PlayerController : MonoBehaviour
             currentExp = 0;
             maxExp = mGameConfig.GetComponent<Config>().getExp(mLevel);
         }
-        levelBar.setExp(currentExp, maxExp);
-        levelText.text = mLevel.ToString();
     }
 
     public void isDamage(float damage)
@@ -80,5 +75,15 @@ public class PlayerController : MonoBehaviour
     public void absorbExp(int exp)
     {
         currentExp += exp;
+    }
+
+    public int getCurrentExp()
+    {
+        return currentExp;
+    }
+
+    public int getLevel()
+    {
+        return mLevel;
     }
 }
