@@ -18,6 +18,14 @@ public class LevelText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        levelText.text = "Level: " + mPlayer.GetComponent<PlayerController>().getLevel().ToString();
+        if (mPlayer)
+        {
+            levelText.text = "Level: " + mPlayer.GetComponent<PlayerController>().getLevel().ToString();
+        }
+        else
+        {
+            mPlayer = GameObject.FindGameObjectWithTag("Player");
+        }
+        
     }
 }

@@ -12,13 +12,16 @@ public enum EnemyIDs
 
 public enum PlayerIDs
 {
-    Player1 = 1,
-    Player2 = 2,
-    Player3 = 3,
+    Player1 = 0,
+    Player2 = 1,
+    Player3 = 2,
 }
 
 public enum GameStateIds
 {
     Menu = 0,
     GameLoop = 1,
+    PauseGame = 2,
+    LevelUp = 3,
+    EndGame = 4,
 }

@@ -21,8 +21,16 @@ public class LevelBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateExp();
-        textExp.text = slide.value.ToString() + " / " + slide.maxValue.ToString();
+        if(mPlayer)
+        {
+            updateExp();
+            textExp.text = slide.value.ToString() + " / " + slide.maxValue.ToString();
+        }
+        else
+        {
+            mPlayer = GameObject.FindGameObjectWithTag("Player");
+        }
+        
     }
 
     public void updateExp()

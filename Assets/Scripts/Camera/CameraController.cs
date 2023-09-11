@@ -8,13 +8,27 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        distanceOffset = transform.position - player.GetComponent<Transform>().position ;
+        if (player)
+        {
+            distanceOffset = transform.position - player.GetComponent<Transform>().position;
+        }
     }
 
     private void LateUpdate()
     {
-        Vector3 newPosition = player.transform.position + distanceOffset;
-        transform.position = newPosition;
-        transform.LookAt(player.GetComponent<Transform>());
+        if (!player)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            if(player)
+            {
+                distanceOffset = transform.position - player.GetComponent<Transform>().position;
+            }
+        }
+        else
+        {
+            Vector3 newPosition = player.transform.position + distanceOffset;
+            transform.position = newPosition;
+            transform.LookAt(player.GetComponent<Transform>());
+        }
     }
 }

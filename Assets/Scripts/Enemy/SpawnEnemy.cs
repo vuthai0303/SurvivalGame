@@ -25,6 +25,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (!mPlayer)
         {
+            mPlayer = GameObject.FindGameObjectWithTag("Player");
             return;
         }
 

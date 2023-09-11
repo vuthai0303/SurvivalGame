@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -9,6 +10,7 @@ public class MenuController : MonoBehaviour
     public List<RuntimeAnimatorController> lstPlayerAnimator;
     public List<GameObject> lstBtnChoosePlayer;
     public GameObject Player;
+    public GameManager GameManager;
     public int choosePlayerIds = 0;
 
     // Update is called once per frame
@@ -34,5 +36,11 @@ public class MenuController : MonoBehaviour
     public void onClickBtnChooosePlayer(int idx)
     {
         choosePlayerIds = idx;
+    }
+
+    public void onClickStartGame()
+    {
+        GameManager.playerIds = choosePlayerIds;
+        SceneManager.LoadScene("GamePlay");
     }
 }
